@@ -4,9 +4,10 @@ import datetime
 
 # Create your models here.
 class Detail(models.Model):
-    name = models.CharField(max_length=100,null=False)
-    phone_number = models.CharField(max_length=10)
-    email_id = models.CharField(max_length=300,null=False)
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100,default="Student")
+    phone_number = models.CharField(max_length=10,null=True,blank=True)
+    email_id = models.CharField(max_length=300)
     dob = models.DateField(default=datetime.date.today)
     portfolio_links = models.CharField(max_length=1000)
     about_me = models.TextField(max_length=2000)
@@ -26,4 +27,4 @@ class Detail(models.Model):
     skills = models.TextField(max_length=1000)
 
     def __str__(self):
-        return self.name + str(self.id)
+        return self.name

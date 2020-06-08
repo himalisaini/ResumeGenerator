@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+         * {
+  box-sizing: border-box;
+}
+    .column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+        .container{
+            display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+        }
+        body{
+    text-align: center;
+    background-image: url("bg_resume.jpg");
+            font-size: 17px;
+
+}
+.heading{
+    background-color: #262626;
+    color: #f2f2f2;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    text-align: left;
+    padding: 3%;
+}
+.subheading{
+    font-weight: bolder;
+    margin: 1%;
+    font-family: Tahoma;
+    font-size: 25px;
+
+}
+
+.leftrow {
+    background-color: #E0E0E0;
+}
+
+.subright{
+    text-align: left;
+
+}
+.eh1{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+}
+.eh2{
+    font-weight: bold;
+    font-size: 20px;
+}
+.eh3{
+    font-size: 20px;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="heading">
+    <h2> {{ user.name }}</h2>
+    <h5 style="color: #cccccc"> {{ user.designation  }}</h5>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="column left leftrow">
+                <div class="subheading"> Contact </div>
+                <i > {{ user.phone_number }}</i>  <br>
+                <i > {{ user.email_id }}</i> <br>
+                {% if user.portfolio_links %}
+                    <i > {{ user.portfolio_links }}</i>
+                    <br>
+                {% endif %}
+                <hr>
+                <div class="subheading"> Skills </div>
+                <div class="container"> {{ user.skills }}</div>
+                <hr>
+
+                <div class="subheading"> Education </div>
+                <hr>
+
+                    <div class="educont">
+                        <p class="eh1"> {{ user.university }}</p>
+                        <p class="eh2"> Degree : {{ user.degree }}</p>
+                        <p class="eh2"> Field : {{ user.field_degree }}</p>
+                        <p class="eh3"> Avg CGPA : {{ user.avg_cgpa}}</p>
+                        <hr>
+
+                    </div>
+                    <div class="educont">
+                        <p class="eh1"> {{ user.twelfth_school }}</p>
+                        <p class="eh2"> Class 12th Board : {{ user.twelfth_board }}</p>
+                        <p class="eh3"> Percentage : {{ user.twelfth_percentage }}</p>
+                        <hr>
+                    </div>
+                    <div class="educont">
+                        <p class="eh1"> {{ user.tenth_school }}</p>
+                        <p class="eh2"> Class 10th Board : {{ user.tenth_board }}</p>
+                        <p class="eh3"> Percentage : {{ user.tenth_percentage}}</p>
+                    <hr>
+                    </div>
+
+
+
+
+
+            </div>
+            <div class="column right">
+                <div class="subheading"> About </div>
+                <div class="container subright">
+                    {{ user.about_me }}
+                </div>
+                <hr>
+                {% if user.objective %}
+                <div class="subheading"> Objective  </div>
+                <div class="container subright">
+                    {{ user.objective }}
+                </div>
+                    <hr>
+                {% endif %}
+
+                {% if user.internship %}
+                <div class="subheading"> Internships  </div>
+                <div class="container subright">
+                    {{ user.internship }}
+                </div>
+                    <hr>
+                {% endif %}
+
+                {% if user.work_experience %}
+                <div class="subheading"> Work Experience </div>
+                <div class="container subright">
+                    {{ user.work_experience }}
+                </div>
+                    <hr>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
