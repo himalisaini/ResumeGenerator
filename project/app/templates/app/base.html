@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href=" {% static 'food/style.css' %} ">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        .heading{
+            text-align: center;
+            margin: 5%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="heading">
+    <h2> Resume Generator </h2>
+    <h6> Enter the following details and click on the submit button to generate your resume in pdf format</h6>
+    </div>
+<form>
+    <div class="form-row">
+  <div class="form-group col-md-6">
+    <label> Name </label>
+          <input type="text" class="form-control" id="name"  placeholder="Enter name" name="name">
+
+  </div>
+        <div class="form-group col-md-6">
+    <label> Date of Birth </label>
+            <input type="date" class="form-control" id="dob"  placeholder="Enter dob" name="dob">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+    <label> Email </label>
+    <input type="email" class="form-control" id="email"  placeholder="abc@xyz.com" name="email">
+        </div>
+        <div class="form-group col-md-6">
+    <label> Phone number </label>
+    <input type="number" class="form-control" id="phone_number"  placeholder="" name="phone_number">
+        </div>
+    </div>
+
+    <div class="form-group">
+    <label>Portfolio links </label>
+          <input type="text" class="form-control" id="portfolio_links"  placeholder="Linkedin/Github ID " name="portfolio_links">
+
+    </div>
+
+    <div class="form-group">
+    <label >About you</label>
+    <textarea class="form-control" id="about_me" rows="3" name="about_me"></textarea>
+    </div>
+
+    <div class="form-group">
+    <label > Objective</label>
+    <textarea class="form-control" id="objective" rows="3" name="objective"></textarea>
+    </div>
+    <br>
+    <div class="form-row">
+    <div class="form-group col-md-4">
+    <label> Degree </label>
+          <input type="text" class="form-control" id="degree"  placeholder="B.tech/B.A/B.Ed.." name="degree">
+    </div>
+
+        <div class="form-group col-md-8">
+    <label> Field of study </label>
+          <input type="text" class="form-control" id="field_degree"  placeholder="Computer Science / Mechanical ..." name="field_degree">
+    </div>
+
+    </div>
+    <br>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Grade 10 school name </label>
+          <input type="text" class="form-control" id="tenth_school"  placeholder="Ryan international school" name="tenth_school">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label>Grade 10 board </label>
+          <input type="text" class="form-control" id="tenth_board"  placeholder="ICSE/CBSE/IGSCE/State" name="tenth_board">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label>Grade 10 percentage </label>
+          <input type="text" class="form-control" id="tenth_percentage"  placeholder="94%" name="tenth_percentage">
+    </div>
+    </div>
+    <br>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>Grade 12 school name / Junior college name </label>
+          <input type="text" class="form-control" id="twelfth_school"  placeholder="Apeejay School" name="twelfth_school">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label>Grade 12 board </label>
+          <input type="text" class="form-control" id="twelfth_board"  placeholder="ICSE/CBSE/IGSCE/State" name="twelfth_board">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label>Grade 12 percentage </label>
+          <input type="text" class="form-control" id="twelfth_percentage"  placeholder="92%" name="twelfth_percentage">
+    </div>
+    </div>
+    <br>
+    <div class="form-row">
+    <div class="form-group col-md-8">
+    <label> College / University </label>
+          <input type="text" class="form-control" id="university"  placeholder="K.J Somaiya College of Engineering" name="university">
+    </div>
+
+    <div class="form-group col-md-3">
+    <label> Avg. CGPA </label>
+          <input type="text" class="form-control" id="avg_cgpa"  placeholder="9.3" name="avg_cgpa">
+    </div>
+    </div>
+    <br>
+    <div class="form-group">
+    <label >Internships </label>
+    <textarea class="form-control" id="internship" rows="4" name="internship"></textarea>
+    </div>
+
+    <div class="form-group">
+    <label >Work Experience</label>
+    <textarea class="form-control" id="work_experience" rows="5" name="work_experience"></textarea>
+    </div>
+
+    <div class="form-group">
+    <label >Skills</label>
+    <textarea class="form-control" id="skills" rows="3" name="skills"></textarea>
+    </div>
+
+  <button style="margin-left: 38%;" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+
+</body>
+</html>
